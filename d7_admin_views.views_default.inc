@@ -294,7 +294,6 @@ function d7_admin_views_views_default_views() {
   $handler->display->display_options['filters']['status']['expose']['label'] = 'Active';
   $handler->display->display_options['filters']['status']['expose']['operator'] = 'status_op';
   $handler->display->display_options['filters']['status']['expose']['identifier'] = 'status';
-  $handler->display->display_options['filters']['status']['expose']['required'] = TRUE;
   $handler->display->display_options['filters']['status']['expose']['remember_roles'] = array(
     2 => '2',
     3 => 0,
@@ -339,6 +338,7 @@ function d7_admin_views_views_default_views() {
     20 => 0,
     7 => 0,
     8 => 0,
+    47 => 0,
   );
   /* Filter criterion: User Stats: Statistic name */
   $handler->display->display_options['filters']['name']['id'] = 'name';

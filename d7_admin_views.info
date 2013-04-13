@@ -2,6 +2,7 @@ name = D7 Admin views
 description = Admin Views I created for the D7 site
 core = 7.x
 package = Admin
+php = 5.2.4
 dependencies[] = advanced_forum
 dependencies[] = panels
 dependencies[] = views
