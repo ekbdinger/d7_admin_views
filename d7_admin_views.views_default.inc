@@ -48,6 +48,7 @@ function d7_admin_views_views_default_views() {
     'status' => 'status',
     'changed' => 'changed',
     'totalcount' => 'totalcount',
+    'field_video_date' => 'field_video_date',
   );
   $handler->display->display_options['style_options']['default'] = '-1';
   $handler->display->display_options['style_options']['info'] = array(
@@ -124,6 +125,13 @@ function d7_admin_views_views_default_views() {
       'empty_column' => 0,
     ),
     'totalcount' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_video_date' => array(
       'sortable' => 1,
       'default_sort_order' => 'asc',
       'align' => '',
@@ -359,6 +367,17 @@ function d7_admin_views_views_default_views() {
   $handler->display->display_options['fields']['totalcount']['field'] = 'totalcount';
   $handler->display->display_options['fields']['totalcount']['label'] = 'Views';
   $handler->display->display_options['fields']['totalcount']['element_label_colon'] = FALSE;
+  /* Field: Content: Video Date */
+  $handler->display->display_options['fields']['field_video_date']['id'] = 'field_video_date';
+  $handler->display->display_options['fields']['field_video_date']['table'] = 'field_data_field_video_date';
+  $handler->display->display_options['fields']['field_video_date']['field'] = 'field_video_date';
+  $handler->display->display_options['fields']['field_video_date']['settings'] = array(
+    'format_type' => 'long',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -533,6 +552,69 @@ function d7_admin_views_views_default_views() {
     8 => 0,
     47 => 0,
   );
+  /* Filter criterion: Content: Video Type (taxonomy_vocabulary_26) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_26_tid']['id'] = 'taxonomy_vocabulary_26_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_26_tid']['table'] = 'field_data_taxonomy_vocabulary_26';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_26_tid']['field'] = 'taxonomy_vocabulary_26_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_26_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['taxonomy_vocabulary_26_tid']['expose']['operator_id'] = 'taxonomy_vocabulary_26_tid_op';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_26_tid']['expose']['label'] = 'Video Type (taxonomy_vocabulary_26)';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_26_tid']['expose']['operator'] = 'taxonomy_vocabulary_26_tid_op';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_26_tid']['expose']['identifier'] = 'taxonomy_vocabulary_26_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_26_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    3 => 0,
+    1 => 0,
+    23 => 0,
+    21 => 0,
+    36 => 0,
+    43 => 0,
+    39 => 0,
+    25 => 0,
+    46 => 0,
+    9 => 0,
+    31 => 0,
+    19 => 0,
+    14 => 0,
+    15 => 0,
+    13 => 0,
+    5 => 0,
+    22 => 0,
+    12 => 0,
+    30 => 0,
+    38 => 0,
+    11 => 0,
+    42 => 0,
+    40 => 0,
+    29 => 0,
+    32 => 0,
+    35 => 0,
+    41 => 0,
+    28 => 0,
+    16 => 0,
+    45 => 0,
+    27 => 0,
+    24 => 0,
+    37 => 0,
+    26 => 0,
+    34 => 0,
+    18 => 0,
+    17 => 0,
+    33 => 0,
+    44 => 0,
+    20 => 0,
+    7 => 0,
+    8 => 0,
+    47 => 0,
+    48 => 0,
+    49 => 0,
+    50 => 0,
+    51 => 0,
+    52 => 0,
+    53 => 0,
+  );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_26_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_26_tid']['vocabulary'] = 'vocabulary_26';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
