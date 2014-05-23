@@ -31,8 +31,12 @@ function d7_admin_views_views_default_views() {
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
   $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '100';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '250';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
     'counter' => 'counter',
@@ -49,6 +53,8 @@ function d7_admin_views_views_default_views() {
     'changed' => 'changed',
     'totalcount' => 'totalcount',
     'field_video_date' => 'field_video_date',
+    'taxonomy_vocabulary_17' => 'taxonomy_vocabulary_17',
+    'created' => 'created',
   );
   $handler->display->display_options['style_options']['default'] = '-1';
   $handler->display->display_options['style_options']['info'] = array(
@@ -138,6 +144,18 @@ function d7_admin_views_views_default_views() {
       'separator' => '',
       'empty_column' => 0,
     ),
+    'taxonomy_vocabulary_17' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'created' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
   );
   /* Relationship: Content: Author */
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
@@ -203,6 +221,13 @@ function d7_admin_views_views_default_views() {
       'override_label' => 0,
       'label' => '',
     ),
+    'action::502000' => array(
+      'selected' => 1,
+      'postpone_processing' => 1,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
     'action::views_bulk_operations_modify_action' => array(
       'selected' => 1,
       'postpone_processing' => 0,
@@ -212,7 +237,11 @@ function d7_admin_views_views_default_views() {
       'settings' => array(
         'show_all_tokens' => 1,
         'display_values' => array(
-          'file::taxonomy_vocabulary_17' => 'file::taxonomy_vocabulary_17',
+          'priv_documentation::taxonomy_vocabulary_10' => 'priv_documentation::taxonomy_vocabulary_10',
+          'priv_documentation::field_internal_only' => 'priv_documentation::field_internal_only',
+          'file::taxonomy_vocabulary_10' => 'file::taxonomy_vocabulary_10',
+          'story::taxonomy_vocabulary_10' => 'story::taxonomy_vocabulary_10',
+          'page::taxonomy_vocabulary_5' => 'page::taxonomy_vocabulary_5',
         ),
       ),
     ),
@@ -247,7 +276,7 @@ function d7_admin_views_views_default_views() {
       'label' => '',
     ),
     'action::node_save_action' => array(
-      'selected' => 0,
+      'selected' => 1,
       'postpone_processing' => 0,
       'skip_confirmation' => 0,
       'override_label' => 0,
@@ -383,6 +412,11 @@ function d7_admin_views_views_default_views() {
   $handler->display->display_options['fields']['taxonomy_vocabulary_17']['table'] = 'field_data_taxonomy_vocabulary_17';
   $handler->display->display_options['fields']['taxonomy_vocabulary_17']['field'] = 'taxonomy_vocabulary_17';
   $handler->display->display_options['fields']['taxonomy_vocabulary_17']['delta_offset'] = '0';
+  /* Field: Content: Post date */
+  $handler->display->display_options['fields']['created']['id'] = 'created';
+  $handler->display->display_options['fields']['created']['table'] = 'node';
+  $handler->display->display_options['fields']['created']['field'] = 'created';
+  $handler->display->display_options['fields']['created']['date_format'] = 'short';
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -746,6 +780,249 @@ function d7_admin_views_views_default_views() {
     53 => 0,
   );
   $handler->display->display_options['filters']['taxonomy_vocabulary_17_tid']['vocabulary'] = 'vocabulary_17';
+  /* Filter criterion: Content: Author uid */
+  $handler->display->display_options['filters']['uid']['id'] = 'uid';
+  $handler->display->display_options['filters']['uid']['table'] = 'node';
+  $handler->display->display_options['filters']['uid']['field'] = 'uid';
+  $handler->display->display_options['filters']['uid']['value'] = '';
+  $handler->display->display_options['filters']['uid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['uid']['expose']['operator_id'] = 'uid_op';
+  $handler->display->display_options['filters']['uid']['expose']['label'] = 'Author uid';
+  $handler->display->display_options['filters']['uid']['expose']['operator'] = 'uid_op';
+  $handler->display->display_options['filters']['uid']['expose']['identifier'] = 'uid';
+  $handler->display->display_options['filters']['uid']['expose']['remember_roles'] = array(
+    2 => '2',
+    3 => 0,
+    1 => 0,
+    23 => 0,
+    21 => 0,
+    36 => 0,
+    43 => 0,
+    39 => 0,
+    25 => 0,
+    46 => 0,
+    9 => 0,
+    31 => 0,
+    19 => 0,
+    14 => 0,
+    15 => 0,
+    13 => 0,
+    5 => 0,
+    22 => 0,
+    12 => 0,
+    30 => 0,
+    38 => 0,
+    11 => 0,
+    42 => 0,
+    40 => 0,
+    29 => 0,
+    32 => 0,
+    35 => 0,
+    41 => 0,
+    28 => 0,
+    16 => 0,
+    45 => 0,
+    27 => 0,
+    24 => 0,
+    37 => 0,
+    26 => 0,
+    34 => 0,
+    18 => 0,
+    17 => 0,
+    33 => 0,
+    44 => 0,
+    20 => 0,
+    7 => 0,
+    8 => 0,
+    47 => 0,
+    48 => 0,
+    49 => 0,
+    50 => 0,
+    51 => 0,
+    52 => 0,
+    53 => 0,
+    54 => 0,
+    55 => 0,
+  );
+  /* Filter criterion: Content: Version (taxonomy_vocabulary_10) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_10_tid']['id'] = 'taxonomy_vocabulary_10_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_10_tid']['table'] = 'field_data_taxonomy_vocabulary_10';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_10_tid']['field'] = 'taxonomy_vocabulary_10_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_10_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['taxonomy_vocabulary_10_tid']['expose']['operator_id'] = 'taxonomy_vocabulary_10_tid_op';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_10_tid']['expose']['label'] = 'Version';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_10_tid']['expose']['operator'] = 'taxonomy_vocabulary_10_tid_op';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_10_tid']['expose']['identifier'] = 'taxonomy_vocabulary_10_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_10_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    3 => 0,
+    1 => 0,
+    23 => 0,
+    21 => 0,
+    36 => 0,
+    43 => 0,
+    39 => 0,
+    25 => 0,
+    46 => 0,
+    9 => 0,
+    31 => 0,
+    19 => 0,
+    14 => 0,
+    15 => 0,
+    13 => 0,
+    5 => 0,
+    22 => 0,
+    12 => 0,
+    30 => 0,
+    38 => 0,
+    11 => 0,
+    42 => 0,
+    40 => 0,
+    29 => 0,
+    32 => 0,
+    35 => 0,
+    41 => 0,
+    28 => 0,
+    16 => 0,
+    45 => 0,
+    27 => 0,
+    24 => 0,
+    37 => 0,
+    26 => 0,
+    34 => 0,
+    18 => 0,
+    17 => 0,
+    33 => 0,
+    44 => 0,
+    20 => 0,
+    7 => 0,
+    8 => 0,
+    47 => 0,
+    48 => 0,
+    49 => 0,
+    50 => 0,
+    51 => 0,
+    52 => 0,
+    53 => 0,
+    54 => 0,
+    55 => 0,
+  );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_10_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_10_tid']['vocabulary'] = 'vocabulary_10';
+  /* Filter criterion: Content: News Category (taxonomy_vocabulary_9) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_9_tid']['id'] = 'taxonomy_vocabulary_9_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_9_tid']['table'] = 'field_data_taxonomy_vocabulary_9';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_9_tid']['field'] = 'taxonomy_vocabulary_9_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_9_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['taxonomy_vocabulary_9_tid']['expose']['operator_id'] = 'taxonomy_vocabulary_9_tid_op';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_9_tid']['expose']['label'] = 'News Category (taxonomy_vocabulary_9)';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_9_tid']['expose']['operator'] = 'taxonomy_vocabulary_9_tid_op';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_9_tid']['expose']['identifier'] = 'taxonomy_vocabulary_9_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_9_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    3 => 0,
+    1 => 0,
+    23 => 0,
+    21 => 0,
+    36 => 0,
+    25 => 0,
+    46 => 0,
+    31 => 0,
+    19 => 0,
+    14 => 0,
+    15 => 0,
+    13 => 0,
+    5 => 0,
+    22 => 0,
+    12 => 0,
+    38 => 0,
+    40 => 0,
+    29 => 0,
+    32 => 0,
+    35 => 0,
+    28 => 0,
+    16 => 0,
+    45 => 0,
+    27 => 0,
+    24 => 0,
+    37 => 0,
+    34 => 0,
+    18 => 0,
+    17 => 0,
+    33 => 0,
+    44 => 0,
+    20 => 0,
+    7 => 0,
+    8 => 0,
+    47 => 0,
+    48 => 0,
+    49 => 0,
+    51 => 0,
+    52 => 0,
+    53 => 0,
+    54 => 0,
+    55 => 0,
+    56 => 0,
+  );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_9_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_9_tid']['vocabulary'] = 'vocabulary_9';
+  /* Filter criterion: Content: Privacy (taxonomy_vocabulary_5) */
+  $handler->display->display_options['filters']['taxonomy_vocabulary_5_tid']['id'] = 'taxonomy_vocabulary_5_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_5_tid']['table'] = 'field_data_taxonomy_vocabulary_5';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_5_tid']['field'] = 'taxonomy_vocabulary_5_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_5_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['taxonomy_vocabulary_5_tid']['expose']['operator_id'] = 'taxonomy_vocabulary_5_tid_op';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_5_tid']['expose']['label'] = 'Privacy (taxonomy_vocabulary_5)';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_5_tid']['expose']['operator'] = 'taxonomy_vocabulary_5_tid_op';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_5_tid']['expose']['identifier'] = 'taxonomy_vocabulary_5_tid';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_5_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    3 => 0,
+    1 => 0,
+    23 => 0,
+    21 => 0,
+    36 => 0,
+    25 => 0,
+    46 => 0,
+    31 => 0,
+    19 => 0,
+    14 => 0,
+    15 => 0,
+    13 => 0,
+    5 => 0,
+    22 => 0,
+    12 => 0,
+    38 => 0,
+    40 => 0,
+    29 => 0,
+    32 => 0,
+    35 => 0,
+    28 => 0,
+    16 => 0,
+    45 => 0,
+    27 => 0,
+    24 => 0,
+    37 => 0,
+    34 => 0,
+    18 => 0,
+    17 => 0,
+    33 => 0,
+    44 => 0,
+    20 => 0,
+    7 => 0,
+    8 => 0,
+    47 => 0,
+    48 => 0,
+    49 => 0,
+    51 => 0,
+    52 => 0,
+    53 => 0,
+    54 => 0,
+    55 => 0,
+    56 => 0,
+  );
+  $handler->display->display_options['filters']['taxonomy_vocabulary_5_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['taxonomy_vocabulary_5_tid']['vocabulary'] = 'vocabulary_5';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
@@ -1258,6 +1535,10 @@ function d7_admin_views_views_default_views() {
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['path'] = 'admin-users';
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page_1');
+  $handler->display->display_options['path'] = 'admin-users-test';
   $export['admin_users'] = $view;
 
   $view = new view();
@@ -1277,10 +1558,10 @@ function d7_admin_views_views_default_views() {
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'role';
   $handler->display->display_options['access']['role'] = array(
-    3 => 3,
-    14 => 14,
-    15 => 15,
-    5 => 5,
+    3 => '3',
+    14 => '14',
+    15 => '15',
+    5 => '5',
   );
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
@@ -1540,6 +1821,12 @@ function d7_admin_views_views_default_views() {
   $handler->display->display_options['filters']['timestamp']['exposed'] = TRUE;
   $handler->display->display_options['filters']['timestamp']['expose']['label'] = 'Node: Has new content';
   $handler->display->display_options['filters']['timestamp']['expose']['identifier'] = 'timestamp';
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['relationship'] = 'nid';
+  $handler->display->display_options['filters']['status']['value'] = '1';
   $export['comments_all'] = $view;
 
   $view = new view();
@@ -1691,6 +1978,10 @@ function d7_admin_views_views_default_views() {
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page_1');
   $handler->display->display_options['path'] = 'user/directory';
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page_2');
+  $handler->display->display_options['path'] = 'trainers-forum';
   $export['trainers_list'] = $view;
 
   return $export;
